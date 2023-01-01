@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	let year = new Date().getFullYear();
+	import Heading from '$lib/components/Heading.svelte';
+
+	let durianData = {};
+</script>
+
+<main class="container">
+	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year}</Heading>
+</main>
