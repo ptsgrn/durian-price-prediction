@@ -5,20 +5,23 @@
 		NavBrand,
 		NavLi,
 		NavUl,
-		NavHamburger,
 		Drawer,
 		CloseButton,
 		ToolbarButton
 	} from 'flowbite-svelte';
 	import MenuHamburger from '$lib/components/MenuHamburger.svelte';
-	let hidden = true;
 	import { sineIn } from 'svelte/easing';
 	import DurianIcon from '$lib/assets/icons/noun-durian-1510201.svg';
+	import { page } from '$app/stores';
+
+	let hidden = true;
 	let transitionParams = {
 		x: 320,
 		duration: 200,
 		easing: sineIn
 	};
+
+	const currentPageLink = $page.url.pathname;
 </script>
 
 <Navbar let:toggle class="border-b-4 !border-purple-700 text-black !py-3">
@@ -38,30 +41,30 @@
 			<MenuHamburger />
 		</ToolbarButton>
 	</div>
-	<NavUl class="hidden lg:flex ">
+	<NavUl divClass="hidden lg:flex font-loop">
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/"
 			>หน้าหลัก<span
-				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
 		>
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/predictions"
 			>พยากรณ์ราคาทุเรียน<span
-				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
 		>
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/howto"
 			>วิธีใช้งาน<span
-				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
 		>
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/markets"
 			>ร้านค้า<span
-				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
 		>
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/"
 			>เกี่ยวกับเว็บไซต์<span
-				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
 		>
 	</NavUl>
@@ -71,36 +74,36 @@
 		{transitionParams}
 		id="mobile-menu-3"
 		bind:hidden
-		divClass="p-0 border-l-4 border-purple-700 bg-white dark:bg-gray-800 dark:text-white"
+		divClass="p-0 border-l-4 border-purple-700 bg-white dark:bg-gray-800 dark:text-white z-10 font-loop"
 		backdrop={false}
 	>
 		<div class="flex items-center m-4">
 			<CloseButton on:click={() => (hidden = true)} class="mb-4 dark:text-white rounded-none" />
 		</div>
-		<div class="flex flex-col gap-2">
+		<div class="flex flex-col gap-2 font-loop">
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/"
 				>หน้าหลัก<span
-					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/predictions"
 				>พยากรณ์ราคาทุเรียน<span
-					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/howto"
 				>วิธีใช้งาน<span
-					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/markets"
 				>ร้านค้า<span
-					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/"
 				>เกี่ยวกับเว็บไซต์<span
-					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-700"
+					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
 			<div class="text-sm flex flex-row border-t-4 justify-around absolute bottom-0 w-full p-4">
