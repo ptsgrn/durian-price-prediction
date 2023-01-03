@@ -51,7 +51,7 @@
 			>พยากรณ์ราคาทุเรียน<span
 				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 			/></NavLi
-		>
+		> 
 		<NavLi class="block pt-7 group transition duration-300 px-5" href="/howto"
 			>วิธีใช้งาน<span
 				class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
@@ -78,7 +78,7 @@
 		backdrop={false}
 	>
 		<div class="flex items-center m-4">
-			<CloseButton on:click={() => (hidden = true)} class="mb-4 dark:text-white rounded-none" />
+			<CloseButton on:click={() => (hidden = true)} class=" dark:text-white rounded-none" />
 		</div>
 		<div class="flex flex-col gap-2 font-loop">
 			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/"
