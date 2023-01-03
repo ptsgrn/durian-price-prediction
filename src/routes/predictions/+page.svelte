@@ -100,7 +100,6 @@
 			monthYear: '2023-12',
 			price: 150
 		}
-		
 	];
 	/**
 	 * @type {string | null}
@@ -115,7 +114,7 @@
 		<Heading tag="h2">พยากรณ์ราคาทุเรียนหมอนทอง</Heading>
 		<span
 			>เดือน
-			<select name="Month" id="0">
+			<select name="Month" id="0" class="month-sleect">
 				{#each priceData as { monthYear, price }, i (monthYear)}
 					{#if formatYear(new Date()) === formatYear(new Date(monthYear))}
 						<option value={i}>{formatMonth(new Date(monthYear))}</option>
@@ -123,19 +122,26 @@
 				{/each}
 			</select>
 			ปี
-			<select name="Years" id="1">
+			<select name="Years" id="1" class="year-sleect">
 				{#each priceData as { monthYear, price }, i (monthYear)}
 					{#if i != 0}
-						{previousYear = formatYear(new Date(priceData[i - 1].monthYear))}
+						{(previousYear = formatYear(new Date(priceData[i - 1].monthYear)))}
 					{/if}
-					{currentYear = formatYear(new Date(priceData[i].monthYear))}
+					{(currentYear = formatYear(new Date(priceData[i].monthYear)))}
 					{#if previousYear != currentYear}
 						<option value={i}>{currentYear}</option>
 					{/if}
 				{/each}
-			</select></span
+			</select></span>
+		<div class="flex items-center justify-between">
+			<button><span class="material-symbols-outlined items-center"> arrow_back <span>ก่อนหน้า</span></span></button>
+			<div class="text-center"><span class="text-[20vw]">159</span><span>บาท/กิโลกรัม</span></div>
+			<button><span class="material-symbols-outlined items-center"> <span>ไปหน้า</span> arrow_forward</span></button>
+		</div>
+		<button class="flex items-center p-3 border-2 border-blue-700"
+			><span class="material-symbols-outlined">search</span>แสดงข้อมูลล่าสุด</button
 		>
-		<div class="text-center"><span class="text-[50vh]">159</span><span>บาท/กิโลกรัม</span></div>
 	</div>
 	<div />
 </div>
+<Heading tag='h2'>พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>
