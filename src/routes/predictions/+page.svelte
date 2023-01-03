@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import Heading from '$lib/components/Heading.svelte';
+	import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
 	const formatMonth = Intl.DateTimeFormat('th-TH', { month: 'long' }).format;
 	const formatYear = Intl.DateTimeFormat('th-TH', { year: 'numeric' }).format;
-
 	const priceData = [
 		{
 			monthYear: '2021-01',
@@ -14,129 +14,200 @@
 		},
 		{
 			monthYear: '2021-03',
-			price: 123
+			price: 124
 		},
 		{
 			monthYear: '2021-04',
-			price: 123
+			price: 125
 		},
 		{
 			monthYear: '2021-05',
-			price: 123
+			price: 126
 		},
 		{
 			monthYear: '2021-06',
-			price: 123
+			price: 127
 		},
 		{
 			monthYear: '2021-07',
-			price: 123
+			price: 128
 		},
 		{
 			monthYear: '2021-08',
-			price: 123
+			price: 129
 		},
 		{
 			monthYear: '2021-09',
-			price: 123
+			price: 130
 		},
 		{
 			monthYear: '2021-10',
-			price: 123
+			price: 131
 		},
 		{
 			monthYear: '2021-11',
-			price: 123
+			price: 132
 		},
 		{
 			monthYear: '2021-12',
-			price: 123
+			price: 133
 		},
 		{
 			monthYear: '2022-01',
-			price: 150
+			price: 134
 		},
 		{
 			monthYear: '2022-02',
-			price: 150
+			price: 135
 		},
 		{
 			monthYear: '2022-03',
-			price: 150
+			price: 136
 		},
 		{
 			monthYear: '2022-04',
-			price: 150
+			price: 137
 		},
 		{
 			monthYear: '2023-05',
-			price: 150
+			price: 138
 		},
 		{
 			monthYear: '2023-06',
-			price: 150
+			price: 139
 		},
 		{
 			monthYear: '2023-07',
-			price: 150
+			price: 140
 		},
 		{
 			monthYear: '2023-08',
-			price: 150
+			price: 141
 		},
 		{
 			monthYear: '2023-09',
-			price: 150
+			price: 142
 		},
 		{
 			monthYear: '2023-10',
-			price: 150
+			price: 143
 		},
 		{
 			monthYear: '2023-11',
-			price: 150
+			price: 144
 		},
 		{
 			monthYear: '2023-12',
-			price: 150
+			price: 145
 		}
 	];
-	/**
-	 * @type {string | null}
-	 */
-	let previousYear = null;
-	let currentYear = null;
+	let currentDateString = '2021-01';
+	function leftzeropadding(num: number, size: number) {
+		var s = num + '';
+		while (s.length < size) s = '0' + s;
+		return s;
+	}
+	$: currentDate = new Date(currentDateString);
+	$: currentYear = currentDate.getFullYear();
+	$: currentMonth = leftzeropadding(currentDate.getMonth() + 1, 2);
+	$: listMonth = priceData.filter((item) => item.monthYear.startsWith(String(currentYear)));
+	// [2020, 2021, 2022]
+	$: listYear = Array.from(new Set(priceData.map((item) => item.monthYear.slice(0, 4))));
 </script>
 
 <Heading tag="h1">พยากรณ์ราคา</Heading>
 <div class="grid grid-flow-row border-2 border-blue-700 p-5">
 	<div>
-		<Heading tag="h2">พยากรณ์ราคาทุเรียนหมอนทอง</Heading>
-		<span
-			>เดือน
-			<select name="Month" id="0" class="month-sleect">
-				{#each priceData as { monthYear, price }, i (monthYear)}
-					{#if formatYear(new Date()) === formatYear(new Date(monthYear))}
-						<option value={i}>{formatMonth(new Date(monthYear))}</option>
-					{/if}
+		<Heading tag="h2">พยากรณ์ราคาทุเรียนหมอนทอง เดือน {formatMonth(currentDate)} ปี {currentYear + 543}</Heading>
+		{currentDateString} ({currentDate})
+		<div>
+			เดือน
+			<Button size="xs"><Chevron>{formatMonth(currentDate)}</Chevron></Button>
+			<Dropdown name="month">
+				{#each listMonth as { monthYear }}
+					<DropdownItem
+						on:click={() => {
+							currentDateString = monthYear;
+						}}
+						value={monthYear}>{formatMonth(new Date(monthYear))}</DropdownItem
+					>
 				{/each}
-			</select>
-			ปี
-			<select name="Years" id="1" class="year-sleect">
-				{#each priceData as { monthYear, price }, i (monthYear)}
-					{#if i != 0}
-						{(previousYear = formatYear(new Date(priceData[i - 1].monthYear)))}
-					{/if}
-					{(currentYear = formatYear(new Date(priceData[i].monthYear)))}
-					{#if previousYear != currentYear}
-						<option value={i}>{currentYear}</option>
-					{/if}
+			</Dropdown>
+			ปี <Button size="xs"><Chevron>{formatYear(currentDate)}</Chevron></Button><Dropdown>
+				{#each listYear as y}
+					<DropdownItem
+						on:click={() => {
+							if (priceData.filter(item=>item.monthYear.length === 0)) {
+								currentDateString = `${y}-01`
+								return
+							}
+							currentDateString = `${y}-${currentMonth}`;
+						}}
+						value={y}>{formatYear(new Date(`${y}-${currentMonth}`))}</DropdownItem
+					>
 				{/each}
-			</select></span>
+			</Dropdown>
+		</div>
+		<div class="text-center">
+			<span class="text-[20vw]">{priceData.filter(item => item.monthYear === `${currentYear}-${currentMonth}`)[0].price}</span>
+			<span>บาท/กิโลกรัม</span>
+		</div>
 		<div class="flex items-center justify-between">
-			<button><span class="material-symbols-outlined items-center"> arrow_back <span>ก่อนหน้า</span></span></button>
-			<div class="text-center"><span class="text-[20vw]">159</span><span>บาท/กิโลกรัม</span></div>
-			<button><span class="material-symbols-outlined items-center"> <span>ไปหน้า</span> arrow_forward</span></button>
+			<Button>
+				<svg
+					viewBox="0 -6.5 38 38"
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					aria-hidden="true"
+					class="mr-2 -ml-1 w-5 h-5 fill-current"
+					><g>
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g
+								transform="translate(-1641, -158)"
+								fill="currentColor"
+								fill-rule="nonzero"
+							>
+								<g id="1" transform="translate(1350, 120)">
+									<path
+										d="M317.812138,38.5802109 L328.325224,49.0042713 L328.41312,49.0858421 C328.764883,49.4346574 328.96954,49.8946897 329,50.4382227 L328.998248,50.6209428 C328.97273,51.0514917 328.80819,51.4628128 328.48394,51.8313977 L328.36126,51.9580208 L317.812138,62.4197891 C317.031988,63.1934036 315.770571,63.1934036 314.990421,62.4197891 C314.205605,61.6415481 314.205605,60.3762573 314.990358,59.5980789 L322.274264,52.3739093 L292.99947,52.3746291 C291.897068,52.3746291 291,51.4850764 291,50.3835318 C291,49.2819872 291.897068,48.3924345 292.999445,48.3924345 L322.039203,48.3917152 L314.990421,41.4019837 C314.205605,40.6237427 314.205605,39.3584519 314.990421,38.5802109 C315.770571,37.8065964 317.031988,37.8065964 317.812138,38.5802109 Z"
+										id="left-arrow"
+										transform="translate(310, 50.5) scale(-1, 1) translate(-310, -50.5) "
+									/>
+								</g>
+							</g>
+						</g>
+					</g></svg
+				>
+				เดือนก่อนหน้า
+			</Button>
+
+			<Button>
+				เดือนถัดไป
+				<svg
+					viewBox="0 -6.5 38 38"
+					version="1.1"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					class="ml-2 -mr-1 w-5 h-5 fill-current"
+					><g>
+						<g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g
+								transform="translate(-1511, -158)"
+								fill="currentColor"
+								fill-rule="nonzero"
+							>
+								<g id="1" transform="translate(1350, 120)">
+									<path
+										d="M187.812138,38.5802109 L198.325224,49.0042713 L198.41312,49.0858421 C198.764883,49.4346574 198.96954,49.8946897 199,50.4382227 L198.998248,50.6209428 C198.97273,51.0514917 198.80819,51.4628128 198.48394,51.8313977 L198.36126,51.9580208 L187.812138,62.4197891 C187.031988,63.1934036 185.770571,63.1934036 184.990421,62.4197891 C184.205605,61.6415481 184.205605,60.3762573 184.990358,59.5980789 L192.274264,52.3739093 L162.99947,52.3746291 C161.897068,52.3746291 161,51.4850764 161,50.3835318 C161,49.2819872 161.897068,48.3924345 162.999445,48.3924345 L192.039203,48.3917152 L184.990421,41.4019837 C184.205605,40.6237427 184.205605,39.3584519 184.990421,38.5802109 C185.770571,37.8065964 187.031988,37.8065964 187.812138,38.5802109 Z"
+										id="right-arrow"
+									/>
+								</g>
+							</g>
+						</g>
+					</g></svg
+				>
+			</Button>
 		</div>
 		<button class="flex items-center p-3 border-2 border-blue-700"
 			><span class="material-symbols-outlined">search</span>แสดงข้อมูลล่าสุด</button
@@ -144,4 +215,4 @@
 	</div>
 	<div />
 </div>
-<Heading tag='h2'>พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>
+<Heading tag="h2">พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>
