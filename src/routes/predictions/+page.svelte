@@ -152,7 +152,9 @@
 				{#each listYear as y}
 					<DropdownItem
 						on:click={() => {
-							if (priceData.filter((item) => item.monthYear === `${y}-${currentMonth}`).length === 0) {
+							if (
+								priceData.filter((item) => item.monthYear === `${y}-${currentMonth}`).length === 0
+							) {
 								currentDateString = `${y}-01`;
 								return;
 							}
