@@ -90,23 +90,11 @@
 		</Dropdown>
 	</div>
 </div>
-<div class="flex flex-wrap">
-	{#each data as item}
-		<MediumItem
-			title={item.title}
-			description={item.description}
-			image={item.image}
-			link={item.link}
-			price={item.price}
-		/>
-	{/each}
-	{#each data as item}
-		<LargeList
-			title={item.title}
-			description={item.description}
-			image={item.image}
-			link={item.link}
-			price={item.price}
-		/>
-	{/each}
+<div class="overflow-hidden">
+	<div class="">
+		<div class="">
+			<img src="https://via.placeholder.com/150" alt="" class="w-full">
+			<span></span>
+		</div>
+	</div>
 </div>

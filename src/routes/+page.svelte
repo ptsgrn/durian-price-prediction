@@ -5,6 +5,8 @@
 	import { onMount } from 'svelte';
 	import P from '$lib/components/P.svelte';
 	import MediumItem from '$lib/components/MediumItem.svelte';
+	import SellerCard from '$lib/components/SellerCard.svelte';
+	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 
 	let chart: any;
 	onMount(async () => {
@@ -175,25 +177,28 @@
 			}}
 		/>
 	</div>
-	<Heading tag="h2" customSize="text-xl text-bold">รายละเอียดกราฟ</Heading>
+	<Heading tag="h2" customSize="text-2xl text-bold">รายละเอียดกราฟ</Heading>
 	<P class="font-loop"
 		>รันเวย์คอนโดยะเยือก อัลมอนด์ สเตชั่นสตริงแจ๊กพอตดีพาร์ตเมนท์ บิ๊ก คาร์โก้
 		ซีนเซนเซอร์โยเกิร์ตฮองเฮาพาร์ตเนอร์ รีเสิร์ชปัจเจกชนไมเกรน ศิลปากรเทรดจึ๊กสเตเดียม ซูม
 		พ่อค้าอีสเตอร์ ตรวจสอบนายพรานแชมปิยอง รีโมตคอลัมนิสต์ซูฮกเชอร์รี่
 		ไอซียูท็อปบูตคลาสสิกหม่านโถวง่าว ซูฮกเกสต์เฮาส์บอร์ดสแล็ก แพ็คตนเองโอเปร่าเจได เพนกวิน</P
 	>
-
-	<div class="relative bottom-[5%] left-[50%] translate-x-[-50%] block text-center">
-		<span class="material-symbols-outlined"> arrow_downward </span>
-		<p>เลื่อนลงเพื่อดูข้อมูลเพิ่มเติม</p>
-	</div>
 </section>
 <section>
-	<Heading tag="h2" customSize="text-xl text-bold">ร้านค้าปัจุบัน</Heading>
-	<div class="flex flex-warp">
-		{#each data as item}
-			<MediumItem title={item.title} description={item.description} />
-		{/each}
+	<Heading tag="h2" customSize="text-2xl text-bold">ร้านค้าทุเรียน</Heading>
+	<div
+		class="flex flex-wrap justify-center overflow-scroll
+		md:gap-x-2 md:w-auto md:block md:whitespace-nowrap md:snap-mandatory md:snap-x"
+	>
+		<SellerCard />
+		<SellerCard />
+		<SellerCard />
+		<SellerCard />
+		<SellerCard />
+		<SellerCard />
+		<SellerCard />
+		<SellerMoreCard />
 	</div>
 </section>
 

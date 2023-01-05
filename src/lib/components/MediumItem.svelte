@@ -3,18 +3,18 @@
 	export let description = 'Description';
 	export let image = 'https://via.placeholder.com/150';
 	export let link = '#';
-	import { Button } from 'flowbite-svelte';
+	// import { Button } from 'flowbite-svelte';
 	export let price = 123;
 </script>
 
-<div class="container">
+<div class="p-1 mx-2 w-[400px] border-2 block">
 	<img src={image} alt={title} />
-	<b><h1>{title}</h1></b>
+	<b><h1>hjhkj kjkj khkjhkhk sfdd</h1></b>
 	<p>{description}</p>
 	<a href={link} class="">Buy</a>
 	<slot />
 </div>
-
+<!-- 
 <style>
 	.container {
 		padding: 4px;
@@ -38,4 +38,4 @@
 	.container a:hover {
 		background-color: #ddd;
 	}
-</style>
+</style> -->

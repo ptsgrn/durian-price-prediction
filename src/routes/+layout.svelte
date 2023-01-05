@@ -101,7 +101,7 @@
 					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
 			>
-			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/"
+			<a class="block pt-7 text-2xl group transition duration-300 px-5" href="/about"
 				>เกี่ยวกับเว็บไซต์<span
 					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></a
