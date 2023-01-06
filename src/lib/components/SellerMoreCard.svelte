@@ -8,7 +8,8 @@
 <a
 	href="/markets"
 	class="flex flex-col w-96 p-2 my-3 text-center border-2
-md:w-60 md:inline-block md:snap-start md:border-none"
+md:w-60 md:inline-block md:snap-start md:border-none
+hover:shadow-lg hover:border-purple-500 duration-150 hover:scale-105"
 >
 	<span>
 		ดูผู้ขายเพิ่มเติม

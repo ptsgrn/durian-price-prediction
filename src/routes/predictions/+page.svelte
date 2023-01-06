@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Heading from '$lib/components/Heading.svelte';
 	import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
+	import { clampSize } from 'flowbite-svelte/forms/Input.svelte';
 	import { stringify } from 'postcss';
 	const formatMonth = Intl.DateTimeFormat('th-TH', { month: 'long' }).format;
 	const formatYear = Intl.DateTimeFormat('th-TH', { year: 'numeric' }).format;
@@ -129,7 +130,7 @@
 </script>
 
 <Heading tag="h1">พยากรณ์ราคา</Heading>
-<div class="grid grid-flow-row border-2 border-blue-700 p-5">
+<div class="grid grid-flow-row border-4 border-blue-700 p-5">
 	<div>
 		<Heading tag="h2"
 			>พยากรณ์ราคาทุเรียนหมอนทอง เดือน {formatMonth(currentDate)} ปี พ.ศ.&nbsp;{currentYear +
@@ -175,6 +176,7 @@
 		<div class="flex items-center justify-between">
 			<Button
 				disabled={currentPriceIndex === 0}
+				size="sm"
 				on:click={() => {
 					currentDateString = priceData[currentPriceIndex - 1].monthYear;
 				}}
@@ -200,22 +202,24 @@
 						</g>
 					</g></svg
 				>
-				เดือนก่อนหน้า
+				<span class="hidden sm:inline">เดือน</span>ก่อนหน้า
 			</Button>
 
 			<Button
+				size="sm"
 				disabled={currentDateString === formatDateString(nowDate)}
 				on:click={() => {
-					currentDate = nowDate;
-				}}>แสดงข้อมูลปัจจุบัน</Button
+					currentDateString = priceData[priceData.length - 1].monthYear;
+				}}><span class="hidden sm:inline">แสดงข้อมูล</span>ปัจจุบัน</Button
 			>
 			<Button
+				size="sm"
 				disabled={currentPriceIndex === priceData.length - 1}
 				on:click={() => {
 					currentDateString = priceData[currentPriceIndex + 1].monthYear;
 				}}
 			>
-				เดือนถัดไป
+				<span class="hidden sm:inline">เดือน</span>ถัดไป
 				<svg
 					viewBox="0 -6.5 38 38"
 					version="1.1"
@@ -237,6 +241,5 @@
 			</Button>
 		</div>
 	</div>
-	<div />
 </div>
-<Heading tag="h2">พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>
+<Heading tag="h2" class="mt-5">พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>

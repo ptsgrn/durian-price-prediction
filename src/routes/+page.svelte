@@ -8,6 +8,15 @@
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 
+	interface SellerData {
+		image: string;
+		name: string;
+		address: string;
+		phone: string;
+		price: number;
+		id: number;
+	}
+
 	let chart: any;
 	onMount(async () => {
 		const charts = await import('@carbon/charts-svelte');
@@ -22,132 +31,22 @@
 			surplus: 13
 		}
 	];
-	const data = [
+	const data: SellerData[] = [
 		{
-			title: 'ทุเรียน 1',
-			description: 'ทุเรียน 1',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 159
+			name: 'ทดสอบ นางสอบทด',
+			address: 'อ.สตึก, บุรีรัมย์',
+			phone: '0812345678',
+			price: 152,
+			image: 'https://via.placeholder.com/1600x900?text=Image+1',
+			id: 1
 		},
 		{
-			title: 'ทุเรียน 2',
-			description: 'ทุเรียน 2',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 3',
-			description: 'ทุเรียน 3',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 4',
-			description: 'ทุเรียน 4',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 5',
-			description: 'ทุเรียน 5',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 6',
-			description: 'ทุเรียน 6',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 7',
-			description: 'ทุเรียน 7',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 8',
-			description: 'ทุเรียน 8',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 9',
-			description: 'ทุเรียน 9',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 1',
-			description: 'ทุเรียน 1',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 159
-		},
-		{
-			title: 'ทุเรียน 2',
-			description: 'ทุเรียน 2',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 3',
-			description: 'ทุเรียน 3',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 4',
-			description: 'ทุเรียน 4',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 5',
-			description: 'ทุเรียน 5',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 6',
-			description: 'ทุเรียน 6',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 7',
-			description: 'ทุเรียน 7',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 8',
-			description: 'ทุเรียน 8',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
-		},
-		{
-			title: 'ทุเรียน 9',
-			description: 'ทุเรียน 9',
-			image: 'https://via.placeholder.com/150',
-			link: '#',
-			price: 123
+			name: 'ทดสอบ นางสอบทด 2',
+			address: 'อ.แคนดง, บุรีรัมย์',
+			phone: '0812345678',
+			price: 155,
+			image: 'https://via.placeholder.com/1600x900?text=Image+2',
+			id: 2
 		}
 	];
 </script>
@@ -177,7 +76,7 @@
 			}}
 		/>
 	</div>
-	<Heading tag="h2" customSize="text-2xl text-bold">รายละเอียดกราฟ</Heading>
+	<Heading tag="h2" customSize="text-2xl text-bold mt-4">รายละเอียดกราฟ</Heading>
 	<P class="font-loop"
 		>รันเวย์คอนโดยะเยือก อัลมอนด์ สเตชั่นสตริงแจ๊กพอตดีพาร์ตเมนท์ บิ๊ก คาร์โก้
 		ซีนเซนเซอร์โยเกิร์ตฮองเฮาพาร์ตเนอร์ รีเสิร์ชปัจเจกชนไมเกรน ศิลปากรเทรดจึ๊กสเตเดียม ซูม
@@ -186,18 +85,21 @@
 	>
 </section>
 <section>
-	<Heading tag="h2" customSize="text-2xl text-bold">ร้านค้าทุเรียน</Heading>
+	<Heading tag="h2" customSize="text-2xl text-bold mt-4">ร้านค้าทุเรียน</Heading>
 	<div
-		class="flex flex-wrap justify-center overflow-scroll
+		class="flex flex-wrap justify-center overflow-auto
 		md:gap-x-2 md:w-auto md:block md:whitespace-nowrap md:snap-mandatory md:snap-x"
 	>
-		<SellerCard />
-		<SellerCard />
-		<SellerCard />
-		<SellerCard />
-		<SellerCard />
-		<SellerCard />
-		<SellerCard />
+	{#each data as {name, address, phone, price, image, id}}
+		<SellerCard 
+			{name}
+			{address}
+			{phone}
+			{price}
+			{image}
+			{id}
+		/>
+	{/each}
 		<SellerMoreCard />
 	</div>
 </section>

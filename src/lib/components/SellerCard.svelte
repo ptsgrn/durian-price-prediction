@@ -4,22 +4,43 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
+<script lang="ts">
+	export let name: string;
+	export let address: string;
+	export let phone: string;
+	export let price: number;
+	export let image: string;
+	export let id: number;
+</script>
 
-<div class="flex flex-col w-96 border-4 border-purple-400 p-2 my-3 text-gray-700
-md:w-60 md:inline-block md:snap-start">
-	<img src="https://via.placeholder.com/1600x900" class="aspect-video" alt="" />
+<a
+	href={`/seller/${id}`}
+	class="flex flex-col w-96 border-4 border-purple-300 p-2 my-3 text-gray-700
+md:w-60 md:inline-block md:snap-start
+hover:shadow-lg hover:border-purple-500 duration-150 hover:border-8 hover:scale-105
+active:shadow-md active:scale-95
+group"
+>
+	<img
+		src={image}
+		class="aspect-video"
+		alt={`ไปยังหน้าซื้อทุเรียนราคา ${price} บาทต่อกิโลกรัม ของ ${name} อยู่ที่ ${address}`}
+	/>
 	<div
 		class="grid grid-rows-3 items-center my-2 grid-cols-[auto_140px] 
   md:grid-cols-1 md:grid-rows-4 md:grid-flow-row-dense"
 	>
-		<span class="col-span-2 md:col-span-1">ชื่อ: ทดสอบ นางสอบทด</span>
-		<span class="">ที่อยู่: อ.สตึก, บุรีรัมย์</span>
+		<span class="col-span-2 md:col-span-1">ชื่อ: {name}</span>
+		<span class="">ที่อยู่: {address}</span>
 		<div
 			class="row-span-3 text-right flex items-end flex-wrap justify-end align-end
     md:row-span-1 md:order-4 md:text-center md:items-center md:justify-center"
 		>
-			<span class="text-3xl mr-2 text-purple-800 font-bold">152</span>บาท/กก.
+			<span
+				class="text-3xl mr-2 text-purple-800 font-semibold
+			group-hover:text-4xl group-hover:text-bold duration-75">{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span
+			>บาท/กก.
 		</div>
-		<span>เบอร์โทร: 0812345678</span>
+		<span>เบอร์โทร: {phone}</span>
 	</div>
-</div>
+</a>

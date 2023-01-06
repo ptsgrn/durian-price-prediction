@@ -75,26 +75,6 @@
 
 <div class="flex items-center">
 	<Heading tag="h1">ร้านค้า</Heading>
-	<div>
-		<button><span class="material-symbols-outlined relative">list</span></button>
-		<Dropdown class="w-48 p-3 space-y-1">
-			<li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-				<Radio name="group2" bind:group={group2} value={1}>Large List</Radio>
-			</li>
-			<li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-				<Radio name="group2" bind:group={group2} value={2}>Medium List</Radio>
-			</li>
-			<li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-				<Radio name="group2" bind:group={group2} value={3}>Small List</Radio>
-			</li>
-		</Dropdown>
-	</div>
 </div>
 <div class="overflow-hidden">
-	<div class="">
-		<div class="">
-			<img src="https://via.placeholder.com/150" alt="" class="w-full">
-			<span></span>
-		</div>
-	</div>
 </div>
