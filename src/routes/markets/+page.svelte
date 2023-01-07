@@ -72,6 +72,10 @@
 	let group2 = 2;
 </script>
 
+<svelte:head>
+	<title>ตลาดทุเรียน</title>
+</svelte:head>
+
 <Heading tag="h1" class="pt-4">ร้านค้าทุเรียน</Heading>
 <div class="flex flex-col dark:text-white">
 	<SellerInMarket />
