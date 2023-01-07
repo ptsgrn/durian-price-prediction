@@ -2,6 +2,7 @@
 	import Heading from '$lib/components/Heading.svelte';
 	import LargeList from '$lib/components/LargeList.svelte';
 	import MediumItem from '$lib/components/MediumItem.svelte';
+	import SellerInMarket from '$lib/components/SellerInMarket.svelte';
 	import { Dropdown, DropdownItem, DropdownDivider, Radio, Button } from 'flowbite-svelte';
 
 	// สร้าง Dataset ของทุเรียนที่มีตัวแปร Title, Description, Image, Link, Price
@@ -73,8 +74,11 @@
 	let group2 = 2;
 </script>
 
-<div class="flex items-center">
-	<Heading tag="h1">ร้านค้า</Heading>
-</div>
-<div class="overflow-hidden">
+<Heading tag="h1" class="pt-4">ร้านค้าทุเรียน</Heading>
+<div class="flex flex-col dark:text-white">
+	<SellerInMarket />
+	<SellerInMarket />
+	<SellerInMarket />
+	<SellerInMarket />
+	<SellerInMarket />
 </div>
