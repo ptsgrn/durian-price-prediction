@@ -129,6 +129,10 @@
 	$: currentPriceIndex = priceData.findIndex((item) => item.monthYear === currentDateString);
 </script>
 
+<svelte:head>
+	<title>การพยากรณ์</title>
+</svelte:head>
+
 <Heading tag="h1">พยากรณ์ราคา</Heading>
 <div class="grid grid-flow-row border-4 border-blue-700 p-5">
 	<div>

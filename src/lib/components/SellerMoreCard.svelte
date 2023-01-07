@@ -14,7 +14,7 @@ hover:shadow-lg hover:border-purple-500 duration-150 hover:scale-105"
 	<span>
 		ดูผู้ขายเพิ่มเติม
 		<svg
-		class="ml-2 h-10 hidden md:inline-block fill-purple-700"
+			class="ml-2 h-10 hidden md:inline-block fill-purple-700"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 			version="1.1"

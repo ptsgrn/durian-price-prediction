@@ -6,8 +6,8 @@
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 	import { Bar } from 'svelte-chartjs';
 	import Chart from 'chart.js/auto';
-	import HowTo from './howto/+page.svelte'
-	import About from './about/+page.svelte'
+	import HowTo from './howto/+page.svelte';
+	import About from './about/+page.svelte';
 
 	interface SellerData {
 		image: string;
@@ -110,6 +110,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>หน้าหลัก</title>
+</svelte:head>
+
 <section class="first-section">
 	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year}</Heading>
 	<div class="z-0 my-10">
@@ -135,15 +139,15 @@
 		<SellerMoreCard />
 	</div>
 </section>
+<section class="my-4">
+	<HowTo />
+</section>
+<section class="my-4">
+	<About />
+</section>
 
 <style>
 	.first-section {
 		height: calc(100wh - 84px);
 	}
 </style>
-<section class="my-4">
-	<HowTo />
-</section>
-<section class="my-4">
-<About />
-</section>

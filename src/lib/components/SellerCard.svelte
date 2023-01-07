@@ -38,7 +38,8 @@ group"
 		>
 			<span
 				class="text-3xl mr-2 text-purple-800 font-semibold
-			group-hover:text-4xl group-hover:text-bold duration-75">{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span
+			group-hover:text-4xl group-hover:text-bold duration-75"
+				>{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span
 			>บาท/กก.
 		</div>
 		<span>เบอร์โทร: {phone}</span>
