@@ -1,7 +1,5 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
-	import LargeList from '$lib/components/LargeList.svelte';
-	import MediumItem from '$lib/components/MediumItem.svelte';
 	import SellerInMarket from '$lib/components/SellerInMarket.svelte';
 	import { Dropdown, DropdownItem, DropdownDivider, Radio, Button } from 'flowbite-svelte';
 

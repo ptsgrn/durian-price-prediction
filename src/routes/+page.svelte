@@ -3,7 +3,6 @@
 	import Heading from '$lib/components/Heading.svelte';
 	import { onMount } from 'svelte';
 	import P from '$lib/components/P.svelte';
-	import MediumItem from '$lib/components/MediumItem.svelte';
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 	import { Bar } from 'svelte-chartjs';
