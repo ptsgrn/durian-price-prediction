@@ -1,7 +1,6 @@
 <script lang="ts">
 	let year = new Date().getFullYear() + 543;
 	import Heading from '$lib/components/Heading.svelte';
-	import { onMount } from 'svelte';
 	import P from '$lib/components/P.svelte';
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
@@ -16,12 +15,6 @@
 		price: number;
 		id: number;
 	}
-
-	let chart: any;
-	onMount(async () => {
-		const charts = await import('@carbon/charts-svelte');
-		chart = charts.LineChart;
-	});
 
 	let durianData = [
 		{
