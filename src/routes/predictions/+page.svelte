@@ -3,129 +3,39 @@
 	import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
 	import { clampSize } from 'flowbite-svelte/forms/Input.svelte';
 	import { stringify } from 'postcss';
+	import { rawData } from '$lib/stores/mockup.js';
 	const formatMonth = Intl.DateTimeFormat('th-TH', { month: 'long' }).format;
 	const formatYear = Intl.DateTimeFormat('th-TH', { year: 'numeric' }).format;
 
 	const formatDateString = (date: Date) => {
 		return left0pad(date.getFullYear(), 4) + '-' + left0pad(date.getMonth() + 1, 2);
 	};
-	const priceData = [
-		{
-			monthYear: '2021-01',
-			price: 159
-		},
-		{
-			monthYear: '2021-02',
-			price: 123
-		},
-		{
-			monthYear: '2021-03',
-			price: 124
-		},
-		{
-			monthYear: '2021-04',
-			price: 125
-		},
-		{
-			monthYear: '2021-05',
-			price: 126
-		},
-		{
-			monthYear: '2021-06',
-			price: 127
-		},
-		{
-			monthYear: '2021-07',
-			price: 128
-		},
-		{
-			monthYear: '2021-08',
-			price: 129
-		},
-		{
-			monthYear: '2021-09',
-			price: 130
-		},
-		{
-			monthYear: '2021-10',
-			price: 131
-		},
-		{
-			monthYear: '2021-11',
-			price: 132
-		},
-		{
-			monthYear: '2021-12',
-			price: 133
-		},
-		{
-			monthYear: '2022-01',
-			price: 134
-		},
-		{
-			monthYear: '2022-02',
-			price: 135
-		},
-		{
-			monthYear: '2022-03',
-			price: 136
-		},
-		{
-			monthYear: '2022-04',
-			price: 137
-		},
-		{
-			monthYear: '2022-05',
-			price: 138
-		},
-		{
-			monthYear: '2022-06',
-			price: 139
-		},
-		{
-			monthYear: '2022-07',
-			price: 140
-		},
-		{
-			monthYear: '2022-08',
-			price: 141
-		},
-		{
-			monthYear: '2022-09',
-			price: 142
-		},
-		{
-			monthYear: '2022-10',
-			price: 143
-		},
-		{
-			monthYear: '2022-11',
-			price: 144
-		},
-		{
-			monthYear: '2022-12',
-			price: 145
-		},
-		{
-			monthYear: '2023-01',
-			price: 146
-		}
-	].sort((a, b) => {
-		return new Date(a.monthYear).getTime() - new Date(b.monthYear).getTime();
+	interface PriceData {
+		monthYear: string;
+		price: number;
+	}
+
+	const priceData: PriceData[] = rawData.map((item) => {
+		return {
+			monthYear: formatDateString(new Date(item[2])),
+			price: Number(item[1])
+		};
 	});
-	let currentDateString = formatDateString(new Date());
+	const nowDate = new Date('2022-09');
+	let currentDateString = formatDateString(nowDate);
 	function left0pad(num: number, size: number) {
 		var s = num + '';
 		while (s.length < size) s = '0' + s;
 		return s;
 	}
 	let currentDate = new Date(currentDateString);
-	const nowDate = new Date();
 	$: currentDate = new Date(currentDateString);
 	$: currentYear = currentDate.getFullYear();
 	$: currentMonth = left0pad(currentDate.getMonth() + 1, 2);
 	$: listMonth = priceData.filter((item) => item.monthYear.startsWith(String(currentYear)));
-	$: listYear = Array.from(new Set(priceData.map((item) => item.monthYear.slice(0, 4))));
+	$: listYear = Array.from(
+		new Set(priceData.map((item) => new Date(item.monthYear).getFullYear()))
+	);
 	$: currentPriceIndex = priceData.findIndex((item) => item.monthYear === currentDateString);
 </script>
 
@@ -153,29 +63,35 @@
 					>
 				{/each}
 			</Dropdown>
-			ปี <Button size="xs"><Chevron>{formatYear(currentDate)}</Chevron></Button><Dropdown>
+			ปี <Button size="xs"><Chevron>{formatYear(currentDate)}</Chevron></Button><Dropdown
+				frameClass="overflow-auto max-h-48 miniscrollbar"
+			>
 				{#each listYear as y}
 					<DropdownItem
 						on:click={() => {
 							if (
 								priceData.filter((item) => item.monthYear === `${y}-${currentMonth}`).length === 0
 							) {
-								currentDateString = `${y}-01`;
+								currentDateString = `2022-04`;
 								return;
 							}
 							currentDateString = `${y}-${currentMonth}`;
 						}}
-						value={y}>{formatYear(new Date(`${y}-${currentMonth}`))}</DropdownItem
+						value={y}>{formatYear(new Date(`${y}-04`))}</DropdownItem
 					>
 				{/each}
 			</Dropdown>
 		</div>
-		<div class="text-center">
-			<span class="text-[20vw]"
-				>{priceData.filter((item) => item.monthYear === `${currentYear}-${currentMonth}`)[0]
-					.price}</span
+		<div class="text-center max-md:flex max-md:flex-col">
+			<span class="text-[18vw]"
+				>{Math.round(
+					(priceData.filter((item) => item.monthYear === `${currentYear}-${currentMonth}`)[0]
+						.price +
+						Number.EPSILON) *
+						100
+				) / 100}</span
 			>
-			<span class="text-gray-700">บาท/กิโลกรัม</span>
+			<span class="text-gray-700 max-md:mb-7">บาท/กิโลกรัม</span>
 		</div>
 		<div class="flex items-center justify-between">
 			<Button
@@ -213,7 +129,7 @@
 				size="sm"
 				disabled={currentDateString === formatDateString(nowDate)}
 				on:click={() => {
-					currentDateString = priceData[priceData.length - 1].monthYear;
+					currentDateString = formatDateString(nowDate);
 				}}><span class="hidden sm:inline">แสดงข้อมูล</span>ปัจจุบัน</Button
 			>
 			<Button
@@ -246,4 +162,18 @@
 		</div>
 	</div>
 </div>
-<Heading tag="h2" class="mt-5">พยากรณ์ราคาล่วงหน้า 5 เดือน</Heading>
+
+<style>
+	.miniscrollbar::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+	.miniscrollbar::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	.miniscrollbar::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+	.miniscrollbar::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+</style>
