@@ -18,9 +18,9 @@
 <Heading tag="h2" class="mt-2">เกี่ยวกับเว็บไซต์</Heading>
 <Img
 	src={ImgPredictGraph1}
-	class="img-fluid shadow-md dark:shadow-gray-800"
+	class="img-fluid shadow-md dark:shadow-gray-800 mx-auto"
 	alignment="mx-auto"
-	size="max-w-md"
+	figClass="text-center"
 	alt="กราฟที่ 1 แสดงข้อมูลราคาทุเรียนตั้งแต่เดือนเมษายน-เดือนกันยายน พ.ศ. 2542-2562"
 	caption="กราฟที่ 1 แสดงข้อมูลราคาทุเรียนตั้งแต่เดือนเมษายน-เดือนกันยายน พ.ศ. 2542-2562"
 />
@@ -46,9 +46,9 @@
 </P>
 <Img
 	src={ImgPredictGraph2}
-	class="img-fluid shadow-md dark:shadow-gray-800"
+	class="img-fluid shadow-md dark:shadow-gray-800 mx-auto"
 	alignment="mx-auto"
-	size="max-w-md"
+	figClass="text-center"
 	alt="กราฟที่ 2 การเปรียบเทียบตัวแบบพยากรณ์ราคาทุเรียนโดยวิธีพยากรณ์ทางสถิติ"
 	caption="กราฟที่ 2 การเปรียบเทียบตัวแบบพยากรณ์ราคาทุเรียนโดยวิธีพยากรณ์ทางสถิติ"
 />
