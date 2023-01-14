@@ -7,15 +7,25 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
 	import P from '$lib/components/P.svelte';
-	import { Li, List, Skeleton } from 'flowbite-svelte';
+	import { Img, Li, List, Skeleton } from 'flowbite-svelte';
+	import ImgPredictGraph2 from '$lib/assets/imgs/80269.jpg';
+	import ImgPredictGraph1 from '$lib/assets/imgs/80272.jpg';
 </script>
 
 <svelte:head>
 	<title>เกี่ยวกับ</title>
 </svelte:head>
 <Heading tag="h2" class="mt-2">เกี่ยวกับเว็บไซต์</Heading>
+<Img
+	src={ImgPredictGraph1}
+	class="img-fluid shadow-md dark:shadow-gray-800"
+	alignment="mx-auto"
+	size="max-w-md"
+	alt="กราฟที่ 1 แสดงข้อมูลราคาทุเรียนตั้งแต่เดือนเมษายน-เดือนกันยายน พ.ศ. 2542-2562"
+	caption="กราฟที่ 1 แสดงข้อมูลราคาทุเรียนตั้งแต่เดือนเมษายน-เดือนกันยายน พ.ศ. 2542-2562"
+/>
 <Heading tag="h3" class="my-3 mt-5">ที่มาและความสำคัญ</Heading>
-<P class="font-loop">
+<P class="font-loop" justify>
 	ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม
 	ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1
 	ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก ถึงแม้ว่าในยุคปัจจุบันจะมีการแพร่ระบาดของโควิด 19
@@ -34,14 +44,33 @@
 	เพื่อเปรียบเทียบตัวแบบพยากรณ์ราคาทุเรียนวิธีต่าง ๆ
 	ที่มีความถูกต้องและเหมาะสมมากที่สุดในการพยากรณ์ราคาทุเรียน
 </P>
+<Img
+	src={ImgPredictGraph2}
+	class="img-fluid shadow-md dark:shadow-gray-800"
+	alignment="mx-auto"
+	size="max-w-md"
+	alt="กราฟที่ 2 การเปรียบเทียบตัวแบบพยากรณ์ราคาทุเรียนโดยวิธีพยากรณ์ทางสถิติ"
+	caption="กราฟที่ 2 การเปรียบเทียบตัวแบบพยากรณ์ราคาทุเรียนโดยวิธีพยากรณ์ทางสถิติ"
+/>
+<Heading tag="h3" class="my-3 mt-5">สรุปผลการทดลอง</Heading>
+<P class="font-loop">
+	ผลการหาตัวแบบพยากรณ์ที่ใช้เกณฑ์ค่า MAPE และค่า RMSE พบว่า วิธีการถดถอยแบบโพลิโนเมียล
+	มีค่าพยากรณ์เข้าใกล้เคียงข้อมูลจริงมากที่สุด และมีค่า MAPE และค่า RMSE
+	ซึ่งเป็นค่าเปอร์เซ็นต์ความคลาดเคลื่อนและก่าลังสองความคลาดเลื่อน ต่่าที่สุดเท่ากับ 9.70% และ 11.84
+	ตามล่าดับ จึงมีความถูกต้องและเหมาะสมมากที่สุดในกาพยากรณ์ราคาทุเรียน
+	รองลงมาได้แก่วิธีการถดถอยเชิงเส้นอย่างง่าย ซึ่งมีความคลาดเคลื่อนสูง
+	เนื่องจากกราฟราคาทุเรียนไม่สอดคล้องกับสมการเส้นตรง แสดงให้เห็นว่า
+	ข้อมูลอนุกรมราคาทุเรียนหมอนทองอยู่ในระดับยอมรับค่าแม่นย่าได้ประมาณ 85% - 90%
+	เหมาะสมที่จะน่าไปพยากรณ์ราคาทุเรียนในอนาคต
+</P>
 
 <Heading tag="h3" class="my-3 mt-5">ช่องทางติดต่อผู้ทำโครงงาน</Heading>
-<div class="grid grid-cols-2">
+<div>
 	<P>
-		<List color="black" class="list-none">
+		<List color="black" list="none">
 			<Li
 				><b>นางสาวธัญญาภรณ์ ผลจันทร์</b>
-				<List class="list-['-\00a0']">
+				<List list="none">
 					<Li
 						>Email:&nbsp;<a
 							href="mailto:thunyapornphonchan@pccbr.ac.th"
@@ -53,7 +82,7 @@
 			</Li>
 			<Li>
 				<b>นางสาวสุธิรา ศรีชัย</b>
-				<List class="list-['-\00a0']">
+				<List tag="ul" list="none">
 					<Li
 						>Email:&nbsp;<a
 							href="mailto:suthirasrichai@pccbr.ac.th"

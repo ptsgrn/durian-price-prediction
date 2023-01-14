@@ -241,8 +241,11 @@
 	<title>หน้าหลัก</title>
 </svelte:head>
 
+<section class="my-4">
+	<About />
+</section>
 <section class="first-section">
-	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year}</Heading>
+	<!-- <Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year}</Heading>
 	<div class="z-0 my-10">
 		<Bar data={chartData} options={chartOptions} />
 	</div>
@@ -252,7 +255,7 @@
 		ซีนเซนเซอร์โยเกิร์ตฮองเฮาพาร์ตเนอร์ รีเสิร์ชปัจเจกชนไมเกรน ศิลปากรเทรดจึ๊กสเตเดียม ซูม
 		พ่อค้าอีสเตอร์ ตรวจสอบนายพรานแชมปิยอง รีโมตคอลัมนิสต์ซูฮกเชอร์รี่
 		ไอซียูท็อปบูตคลาสสิกหม่านโถวง่าว ซูฮกเกสต์เฮาส์บอร์ดสแล็ก แพ็คตนเองโอเปร่าเจได เพนกวิน</P
-	>
+	> -->
 </section>
 <!-- <section>
 	<Heading tag="h2" customSize="text-2xl text-bold mt-4">ร้านค้าทุเรียน</Heading>
@@ -268,9 +271,6 @@
 </section> -->
 <section class="my-4">
 	<HowTo />
-</section>
-<section class="my-4">
-	<About />
 </section>
 
 <style>

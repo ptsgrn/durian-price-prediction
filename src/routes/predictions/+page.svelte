@@ -44,7 +44,7 @@
 </svelte:head>
 
 <Heading tag="h1">พยากรณ์ราคา</Heading>
-<div class="grid grid-flow-row border-4 border-blue-700 p-5">
+<div class="grid grid-flow-row border-4 border-blue-700 p-5 mt-5 mb-20">
 	<div>
 		<Heading tag="h2"
 			>พยากรณ์ราคาทุเรียนหมอนทอง เดือน {formatMonth(currentDate)} ปี พ.ศ.&nbsp;{currentYear +
@@ -83,7 +83,7 @@
 			</Dropdown>
 		</div>
 		<div class="text-center max-md:flex max-md:flex-col">
-			<span class="text-[18vw]"
+			<span class="text-[14vw]"
 				>{Math.round(
 					(priceData.filter((item) => item.monthYear === `${currentYear}-${currentMonth}`)[0]
 						.price +
