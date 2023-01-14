@@ -8,8 +8,10 @@
 	import Heading from '$lib/components/Heading.svelte';
 	import P from '$lib/components/P.svelte';
 	import { Img, Li, List, Skeleton } from 'flowbite-svelte';
-	import ImgPredictGraph2 from '$lib/assets/imgs/80269.jpg';
-	import ImgPredictGraph1 from '$lib/assets/imgs/80272.jpg';
+	// @ts-ignore
+	import ImgPredictGraph1 from '$lib/assets/imgs/80272.jpg?w=300;500;700;1000;1200&format=webp&srcset';
+	// @ts-ignore
+	import ImgPredictGraph2 from '$lib/assets/imgs/80269.jpg?w=300;500;700;1000;1200&format=webp&srcset';
 </script>
 
 <svelte:head>
@@ -17,7 +19,7 @@
 </svelte:head>
 <Heading tag="h2" class="mt-2">เกี่ยวกับเว็บไซต์</Heading>
 <Img
-	src={ImgPredictGraph1}
+	srcset={ImgPredictGraph1}
 	class="img-fluid shadow-md dark:shadow-gray-800 mx-auto"
 	alignment="mx-auto"
 	figClass="text-center"
@@ -45,7 +47,7 @@
 	ที่มีความถูกต้องและเหมาะสมมากที่สุดในการพยากรณ์ราคาทุเรียน
 </P>
 <Img
-	src={ImgPredictGraph2}
+	srcset={ImgPredictGraph2}
 	class="img-fluid shadow-md dark:shadow-gray-800 mx-auto"
 	alignment="mx-auto"
 	figClass="text-center"
