@@ -239,6 +239,36 @@
 
 <svelte:head>
 	<title>หน้าหลัก</title>
+	<mata name="title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
+	<meta
+		name="description"
+		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
+	/>
+	<!-- Primary Meta Tags -->
+	<title>หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง</title>
+	<meta name="title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
+	<meta
+		name="description"
+		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
+	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://durian-price-prediction.app.ptsgrn.dev/" />
+	<meta property="og:title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
+	<meta
+		property="og:description"
+		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
+	/>
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="http://durian-price-prediction.app.ptsgrn.dev/" />
+	<meta property="twitter:title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
+	<meta
+		property="twitter:description"
+		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
+	/>
 </svelte:head>
 
 <section class="my-4">

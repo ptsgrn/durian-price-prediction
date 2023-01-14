@@ -28,6 +28,12 @@
 
 <div class="">
 	<Navbar let:toggle class="border-b-4 !border-purple-700 text-black !py-3">
+		<a
+			href="#main"
+			class="sr-only focus:not-sr-only focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2"
+		>
+			ข้ามส่วนนำทาง
+		</a>
 		<NavBrand href="/">
 			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
 				พยากรณ์ราคาทุเรียนหมอนทอง
@@ -128,7 +134,7 @@
 			</div>
 		</Drawer>
 	</Navbar>
-	<main class="px-5 dark:bg-slate-800 md:w-[47rem] m-auto  duration-200">
+	<main id="main" class="px-5 dark:bg-slate-800 md:w-[47rem] m-auto  duration-200">
 		<slot />
 	</main>
 	<Footer class="mx-auto align-middle justify-center items-center">
