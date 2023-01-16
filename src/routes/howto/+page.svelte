@@ -1,6 +1,6 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
-	import { ImagePlaceholder, Img, Skeleton } from 'flowbite-svelte';
+	import { Img } from 'flowbite-svelte';
 	// @ts-ignore
 	import Step11 from '$lib/assets/imgs/1step1.jpg?w=300;500;700;900&format=webp&srcset';
 	// @ts-ignore

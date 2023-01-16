@@ -1,7 +1,6 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
 	import SellerInMarket from '$lib/components/SellerInMarket.svelte';
-	import { Dropdown, DropdownItem, DropdownDivider, Radio, Button } from 'flowbite-svelte';
 
 	// สร้าง Dataset ของทุเรียนที่มีตัวแปร Title, Description, Image, Link, Price
 	const data = [

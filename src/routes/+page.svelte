@@ -1,11 +1,4 @@
 <script lang="ts">
-	let year = new Date().getFullYear() + 543;
-	import Heading from '$lib/components/Heading.svelte';
-	import P from '$lib/components/P.svelte';
-	import SellerCard from '$lib/components/SellerCard.svelte';
-	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
-	import { Bar } from 'svelte-chartjs';
-	import Chart from 'chart.js/auto';
 	import HowTo from './howto/+page.svelte';
 	import About from './about/+page.svelte';
 

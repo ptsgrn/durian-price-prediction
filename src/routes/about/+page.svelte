@@ -7,7 +7,7 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
 	import P from '$lib/components/P.svelte';
-	import { Img, Li, List, Skeleton } from 'flowbite-svelte';
+	import { Img, Li, List } from 'flowbite-svelte';
 	// @ts-ignore
 	import ImgPredictGraph1 from '$lib/assets/imgs/80272.jpg?w=300;500;700;1000;1200&format=webp&srcset';
 	// @ts-ignore

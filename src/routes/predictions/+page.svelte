@@ -1,8 +1,6 @@
 <script lang="ts">
 	import Heading from '$lib/components/Heading.svelte';
 	import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
-	import { clampSize } from 'flowbite-svelte/forms/Input.svelte';
-	import { stringify } from 'postcss';
 	import { rawData } from '$lib/stores/mockup.js';
 	const formatMonth = Intl.DateTimeFormat('th-TH', { month: 'long' }).format;
 	const formatYear = Intl.DateTimeFormat('th-TH', { year: 'numeric' }).format;
@@ -162,18 +160,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.miniscrollbar::-webkit-scrollbar {
-		width: 0.5rem;
-	}
-	.miniscrollbar::-webkit-scrollbar-track {
-		background: #f1f1f1;
-	}
-	.miniscrollbar::-webkit-scrollbar-thumb {
-		background: #888;
-	}
-	.miniscrollbar::-webkit-scrollbar-thumb:hover {
-		background: #555;
-	}
-</style>
