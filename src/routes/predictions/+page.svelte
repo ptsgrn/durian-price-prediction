@@ -35,7 +35,7 @@
 	$: listMonth = priceData.filter((item) => item.monthYear.startsWith(String(currentYear)));
 	$: listYear = Array.from(
 		new Set(priceData.map((item) => new Date(item.monthYear).getFullYear()))
-	);
+	).sort();
 	$: currentPriceIndex = priceData.findIndex((item) => item.monthYear === currentDateString);
 </script>
 
