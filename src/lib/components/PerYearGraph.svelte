@@ -9,9 +9,9 @@
 	import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale, LineController } from 'chart.js';
 	import { Bar } from 'svelte-chartjs';
 	ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale, LineController);
-  
+  const monthsList = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
 	let chartData = {
-		labels: rawData.map((d) => d[0]),
+		labels: rawData.map(d=>d[0]),
 		datasets: [
 			{
 				label: 'ราคาพยากรณ์',
@@ -30,8 +30,4 @@
   let width = 600;
   let height = 400;
 </script>
-
-<Bar
-  data={chartData}
-  options={chartOptions}
-/>
+<Bar data={chartData} options={chartOptions} width={width} height={height} />

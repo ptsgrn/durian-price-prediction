@@ -1,11 +1,7 @@
 <script lang="ts">
 	import P from '$lib/components/P.svelte';
-	import SellerCard from '$lib/components/SellerCard.svelte';
-	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
-	import HowTo from './howto/+page.svelte';
 	import Heading from '$lib/components/Heading.svelte';
-	import { rawData } from '$lib/stores/mockup';
-	import PerYearGraph from '$lib/components/PerYearGraph.svelte';
+	import PerYearMonthGraph from '$lib/components/PerYearMonthGraph.svelte';
 
 	interface SellerData {
 		image: string;
@@ -76,7 +72,7 @@
 <section class="first-section">
 	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year + 543}</Heading>
 	<div class="z-0 my-10">
-		<PerYearGraph />
+		<PerYearMonthGraph/>
 	</div>
 	<!-- <Heading tag="h2" customSize="text-2xl text-bold mt-4">รายละเอียดกราฟ</Heading>
 	<P class="font-loop"
@@ -98,12 +94,6 @@
 		<SellerMoreCard />
 	</div>
 </section> -->
-<section class="my-4">
+<!-- <section class="my-4">
 	<HowTo />
-</section>
-
-<style>
-	.first-section {
-		height: calc(100wh - 84px);
-	}
-</style>
+</section> -->
