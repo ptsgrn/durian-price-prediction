@@ -43,7 +43,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"apexcharts": "^3.36.3",
 		"chart.js": "^4.1.2",
+		"svelte-apexcharts": "^1.0.2",
 		"svelte-chartjs": "^3.1.0"
 	}
 }
