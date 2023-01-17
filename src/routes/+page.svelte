@@ -2,12 +2,11 @@
 	import P from '$lib/components/P.svelte';
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
-	import { Bar } from 'svelte-chartjs';
-	import Chart from 'chart.js/auto';
 	import HowTo from './howto/+page.svelte';
 	import Heading from '$lib/components/Heading.svelte';
 	import { rawData } from '$lib/stores/mockup';
-	import { chart } from 'svelte-apexcharts'
+	import PerYearGraph from '$lib/components/PerYearGraph.svelte';
+
 	interface SellerData {
 		image: string;
 		name: string;
@@ -37,38 +36,6 @@
 			id: 2
 		}
 	];
-
-	let chartData = {
-		labels: rawData.map((d) => d[0]),
-		datasets: [
-			{
-				label: 'ราคาพยากรณ์',
-				type: 'line',
-				backgroundColor: 'rgb(108, 43, 217)',
-				hoverBorderColor: 'white',
-				fill: false,
-				tension: 0,
-				data: rawData.map((d) => d[1]),
-				yAxisID: 'y',
-				xAxisID: 'x'
-			}
-		]
-	};
-	let chartOptions = {
-    chart: {
-      type: "bar",
-    },
-    series: [
-      {
-        name: "sales",
-        data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-      },
-    ],
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
-    },
-  };
-
 	const year = new Date().getFullYear();
 </script>
 
@@ -107,9 +74,9 @@
 </svelte:head>
 
 <section class="first-section">
-	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year}</Heading>
+	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year + 543}</Heading>
 	<div class="z-0 my-10">
-		<div use:chart={chartOptions} />
+		<PerYearGraph />
 	</div>
 	<Heading tag="h2" customSize="text-2xl text-bold mt-4">รายละเอียดกราฟ</Heading>
 	<P class="font-loop"
