@@ -3,9 +3,14 @@
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 	import HowTo from './howto/+page.svelte';
+	import About from './about/+page.svelte'
 	import Heading from '$lib/components/Heading.svelte';
 	import { rawData } from '$lib/stores/mockup';
 	import PerYearGraph from '$lib/components/PerYearGraph.svelte';
+
+	import SellerImage1 from '$lib/assets/imgs/1.jpg'
+	import SellerImage2 from '$lib/assets/imgs/2.jpg'
+	import SellerImage3 from '$lib/assets/imgs/3.jpg'
 
 	interface SellerData {
 		image: string;
@@ -18,21 +23,19 @@
 
 	const data: SellerData[] = [
 		{
-			name: 'ทดสอบ นางสอบทด',
+			name: 'ทุเรียนนายสมบูรณ์',
 			address: 'อ.สตึก, บุรีรัมย์',
 			phone: '0812345678',
 			price: 152,
-			image:
-				'https://images.unsplash.com/photo-1637819743321-d06e11ac213a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80',
+			image: SellerImage1,
 			id: 1
 		},
 		{
-			name: 'ทดสอบ นางสอบทด 2',
+			name: 'บ้านทุเรียน',
 			address: 'อ.แคนดง, บุรีรัมย์',
 			phone: '0812345678',
 			price: 155,
-			image:
-				'https://images.unsplash.com/photo-1637819743321-d06e11ac213a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80',
+			image: SellerImage2,
 			id: 2
 		}
 	];
@@ -86,7 +89,7 @@
 		ไอซียูท็อปบูตคลาสสิกหม่านโถวง่าว ซูฮกเกสต์เฮาส์บอร์ดสแล็ก แพ็คตนเองโอเปร่าเจได เพนกวิน</P
 	> -->
 </section>
-<!-- <section>
+<section>
 	<Heading tag="h2" customSize="text-2xl text-bold mt-4">ร้านค้าทุเรียน</Heading>
 	<div
 		class="flex flex-wrap justify-center overflow-auto
@@ -97,9 +100,12 @@
 		{/each}
 		<SellerMoreCard />
 	</div>
-</section> -->
+</section>
 <section class="my-4">
 	<HowTo />
+</section>
+<section class="my-4">
+	<About />
 </section>
 
 <style>

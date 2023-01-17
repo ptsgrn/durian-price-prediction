@@ -4,7 +4,9 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
-
+<script>
+export let image = "https://via.placeholder.com/720"
+</script>
 <div class="bg-purple-700 my-2.5 group">
 	<div
 		class="flex flex-col-reverse p-3 bg-white border-[2px] border-black
@@ -47,7 +49,7 @@
   group-hover:opacity-50 duration-200"
 		>
 			<img
-				src="https://via.placeholder.com/720"
+				src={image}
 				class="
   sm:top-[50%] sm:left-[50%] sm:-translate-y-1/2 sm:-translate-x-1/2 sm:absolute"
 				alt=""

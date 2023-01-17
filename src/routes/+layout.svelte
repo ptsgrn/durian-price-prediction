@@ -22,8 +22,6 @@
 		duration: 200,
 		easing: sineIn
 	};
-
-	const currentPageLink = $page.url.pathname;
 </script>
 
 <div class="">
