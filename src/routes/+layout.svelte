@@ -69,7 +69,7 @@
 					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></NavLi
 			>
-			<NavLi class="block pt-7 group transition duration-300 px-5" href="/"
+			<NavLi class="block pt-7 group transition duration-300 px-5" href="/about"
 				>เกี่ยวกับเว็บไซต์<span
 					class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-purple-700"
 				/></NavLi
