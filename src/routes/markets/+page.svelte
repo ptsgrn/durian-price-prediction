@@ -1,9 +1,9 @@
 <script>
 	import Heading from '$lib/components/Heading.svelte';
 	import SellerInMarket from '$lib/components/SellerInMarket.svelte';
-	import SellerImage1 from '$lib/assets/imgs/1.jpg'
-	import SellerImage2 from '$lib/assets/imgs/2.jpg'
-	import SellerImage3 from '$lib/assets/imgs/3.jpg'
+	import SellerImage1 from '$lib/assets/imgs/1.jpg?webp';
+	import SellerImage2 from '$lib/assets/imgs/2.jpg?webp';
+	import SellerImage3 from '$lib/assets/imgs/3.jpg?webp';
 	// สร้าง Dataset ของทุเรียนที่มีตัวแปร Title, Description, Image, Link, Price
 	const data = [
 		{
@@ -53,12 +53,12 @@
 </script>
 
 <svelte:head>
-	<title>ตลาดทุเรียน</title>
+	<title>ตลาดทุเรียน - พยากรณ์ราคาทุเรียนหมอนทอง</title>
 </svelte:head>
 
 <Heading tag="h1" class="pt-4">ร้านค้าทุเรียน</Heading>
 <div class="flex flex-col dark:text-white">
-	{#each data as {image}}
-		<SellerInMarket image={image} />
+	{#each data as { image }}
+		<SellerInMarket {image} />
 	{/each}
 </div>

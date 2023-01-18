@@ -14,7 +14,7 @@
 </script>
 
 <a
-	href={`/seller/${id}`}
+	href={`/markets`}
 	class="flex flex-col w-96 border-4 border-purple-300 p-2 my-3 text-gray-700 gap-3
 md:w-60 md:inline-block md:snap-start
 hover:shadow-lg hover:border-purple-500 duration-150 hover:border-4

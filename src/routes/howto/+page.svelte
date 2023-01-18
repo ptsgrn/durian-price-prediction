@@ -7,10 +7,14 @@
 	import Step12 from '$lib/assets/imgs/1step2.jpg?w=300;500;700;900&format=webp&srcset';
 	// @ts-ignore
 	import Step13 from '$lib/assets/imgs/1step3.jpg?w=300;500;700;900&format=webp&srcset';
+	// @ts-ignore
+	import Step21 from '$lib/assets/imgs/2step1.jpg?w=300;500;700;900&format=webp&srcset';
+	// @ts-ignore
+	import Step22 from '$lib/assets/imgs/2step2.jpg?w=300;500;700;900&format=webp&srcset';
 </script>
 
 <svelte:head>
-	<title>วิธีใช้งาน</title>
+	<title>วิธีใช้งาน - พยากรณ์ราคาทุเรียนหมอนทอง</title>
 </svelte:head>
 
 <Heading tag="h2" class="mt-2">วิธีใช้งาน</Heading>
@@ -35,6 +39,19 @@
 		caption="ดูราคาทุเรียนตามต้องการ"
 	/>
 </div>
-<!-- <Heading tag="h3" class="my-3 mt-5">2. ต้องการซื้อทุเรียนหมอนทอง</Heading>
-<ImagePlaceholder class="p-5 inline-block bg-slate-300" />
-<ImagePlaceholder class="p-5 inline-block bg-slate-300" /> -->
+
+<Heading tag="h3" class="my-3 mt-5">2. ต้องการซื้อทุเรียนหมอนทอง</Heading>
+<div class="grid grid-col-1 md:grid-cols-2">
+	<Img
+		srcset={Step21}
+		class="shadow-md my-5 md:mx-3"
+		alt="เลือกเมนู ร้านค้า"
+		caption="เลือกเมนูร้านค้า"
+	/>
+	<Img
+		srcset={Step22}
+		class="shadow-md my-5 md:mx-3"
+		alt="เลือกร้านค้าที่สนใจ"
+		caption="เลือกร้านค้าที่สนใจ ติดต่อร้านค้าเพื่อสั่งซื้อได้เลย!"
+	/>
+</div>

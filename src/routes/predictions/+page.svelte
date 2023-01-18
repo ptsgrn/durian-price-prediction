@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>การพยากรณ์</title>
+	<title>การพยากรณ์  - พยากรณ์ราคาทุเรียนหมอนทอง</title>
 </svelte:head>
 
 <Heading tag="h1">พยากรณ์ราคา</Heading>

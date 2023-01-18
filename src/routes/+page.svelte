@@ -3,14 +3,14 @@
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
 	import HowTo from './howto/+page.svelte';
-	import About from './about/+page.svelte'
+	import About from './about/+page.svelte';
 	import Heading from '$lib/components/Heading.svelte';
 	import { rawData } from '$lib/stores/mockup';
 	import PerYearGraph from '$lib/components/PerYearGraph.svelte';
 
-	import SellerImage1 from '$lib/assets/imgs/1.jpg'
-	import SellerImage2 from '$lib/assets/imgs/2.jpg'
-	import SellerImage3 from '$lib/assets/imgs/3.jpg'
+	import SellerImage1 from '$lib/assets/imgs/1.jpg';
+	import SellerImage2 from '$lib/assets/imgs/2.jpg';
+	import SellerImage3 from '$lib/assets/imgs/3.jpg';
 
 	interface SellerData {
 		image: string;

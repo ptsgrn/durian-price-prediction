@@ -5,11 +5,30 @@
  https://opensource.org/licenses/MIT
 -->
 <script>
-  import { rawData } from '$lib/stores/mockup';
-	import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale, LineController } from 'chart.js';
+	import { rawData } from '$lib/stores/mockup';
+	import {
+		Chart as ChartJS,
+		Title,
+		Tooltip,
+		Legend,
+		LineElement,
+		LinearScale,
+		PointElement,
+		CategoryScale,
+		LineController
+	} from 'chart.js';
 	import { Bar } from 'svelte-chartjs';
-	ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale, LineController);
-  
+	ChartJS.register(
+		Title,
+		Tooltip,
+		Legend,
+		LineElement,
+		LinearScale,
+		PointElement,
+		CategoryScale,
+		LineController
+	);
+
 	let chartData = {
 		labels: rawData.map((d) => d[0]),
 		datasets: [
@@ -26,12 +45,9 @@
 			}
 		]
 	};
-	let chartOptions = { responsive: true }
-  let width = 600;
-  let height = 400;
+	let chartOptions = { responsive: true };
+	let width = 600;
+	let height = 400;
 </script>
 
-<Bar
-  data={chartData}
-  options={chartOptions}
-/>
+<Bar data={chartData} options={chartOptions} />
