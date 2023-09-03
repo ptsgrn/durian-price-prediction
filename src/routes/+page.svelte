@@ -54,8 +54,8 @@
 <section>
 	<Heading tag="h2" customSize="text-2xl text-bold mt-4">ร้านค้าทุเรียน</Heading>
 	<div
-		class="flex flex-wrap justify-center overflow-auto
-		md:gap-x-2 md:w-auto md:block md:whitespace-nowrap md:snap-mandatory md:snap-x"
+		class="flex max-md:flex-wrap justify-center overflow-auto
+		md:gap-x-2 md:flex md:snap-mandatory md:snap-x md:items-center"
 	>
 		{#each data as { name, address, phone, price, image, id }}
 			<SellerCard {name} {address} {phone} {price} {image} {id} />
@@ -63,6 +63,7 @@
 		<SellerMoreCard />
 	</div>
 </section>
+
 <!-- <section class="my-4">
 	<HowTo />
 </section>

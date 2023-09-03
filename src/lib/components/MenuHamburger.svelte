@@ -32,7 +32,6 @@
 	fill="none"
 	{viewBox}
 	stroke-width="2"
-	on:click
 >
 	{@html svgpath}
 </svg>

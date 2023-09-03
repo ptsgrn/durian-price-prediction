@@ -11,6 +11,9 @@ dependencies:
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
+  flowbite:
+    specifier: ^1.8.1
+    version: 1.8.1
   flowbite-svelte:
     specifier: ^0.44.4
     version: 0.44.4(svelte@4.2.0)
