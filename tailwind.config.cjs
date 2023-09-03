@@ -22,7 +22,7 @@ const config = {
 		}
 	},
 
-	plugins: [require('flowbite/plugin'), require('@tailwindcss/line-clamp')],
+	plugins: [require('flowbite/plugin')],
 	darkMode: 'class'
 };
 

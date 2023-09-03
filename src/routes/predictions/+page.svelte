@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Heading from '$lib/components/Heading.svelte';
-	import { Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
+	import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
 	import { rawData } from '$lib/stores/mockup.js';
 	const formatMonth = Intl.DateTimeFormat('th-TH', { month: 'long' }).format;
 	const formatYear = Intl.DateTimeFormat('th-TH', { year: 'numeric' }).format;
@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>การพยากรณ์  - พยากรณ์ราคาทุเรียนหมอนทอง</title>
+	<title>การพยากรณ์ - พยากรณ์ราคาทุเรียนหมอนทอง</title>
 </svelte:head>
 
 <Heading tag="h1">พยากรณ์ราคา</Heading>
@@ -50,7 +50,7 @@
 		>
 		<div class="font-loop">
 			เดือน
-			<Button size="xs" class="w-28"><Chevron>{formatMonth(currentDate)}</Chevron></Button>
+			<Button size="xs" class="w-28">{formatMonth(currentDate)}</Button>
 			<Dropdown name="month">
 				{#each listMonth as { monthYear }}
 					<DropdownItem
@@ -61,7 +61,7 @@
 					>
 				{/each}
 			</Dropdown>
-			ปี <Button size="xs"><Chevron>{formatYear(currentDate)}</Chevron></Button><Dropdown
+			ปี <Button size="xs">{formatYear(currentDate)}</Button><Dropdown
 				frameClass="overflow-auto max-h-48 miniscrollbar"
 			>
 				{#each listYear as y}

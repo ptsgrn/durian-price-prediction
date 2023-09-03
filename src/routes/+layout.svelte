@@ -1,4 +1,5 @@
 <script>
+	import '../app.scss';
 	import '../app.postcss';
 	import { Footer } from 'flowbite-svelte';
 	import { version } from '$app/environment';
@@ -8,7 +9,7 @@
 
 <div class="">
 	<Navigation />
-	<main id="main" class="px-5 dark:bg-slate-800 md:w-[47rem] m-auto  duration-200">
+	<main id="main" class="px-5 dark:bg-slate-800 md:w-[47rem] m-auto duration-200">
 		<slot />
 	</main>
 	<Footer class="mx-auto align-middle justify-center items-center flex-col">

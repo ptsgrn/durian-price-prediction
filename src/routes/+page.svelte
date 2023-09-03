@@ -1,11 +1,7 @@
 <script lang="ts">
-	import P from '$lib/components/P.svelte';
 	import SellerCard from '$lib/components/SellerCard.svelte';
 	import SellerMoreCard from '$lib/components/SellerMoreCard.svelte';
-	import HowTo from './howto/+page.svelte';
-	import About from './about/+page.svelte';
 	import Heading from '$lib/components/Heading.svelte';
-	import { rawData } from '$lib/stores/mockup';
 	import PerYearGraph from '$lib/components/PerYearGraph.svelte';
 
 	import SellerImage1 from '$lib/assets/imgs/1.jpg';
@@ -42,40 +38,6 @@
 	const year = new Date().getFullYear();
 </script>
 
-<svelte:head>
-	<title>หน้าหลัก</title>
-	<mata name="title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
-	<meta
-		name="description"
-		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
-	/>
-	<!-- Primary Meta Tags -->
-	<title>หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง</title>
-	<meta name="title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
-	<meta
-		name="description"
-		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
-	/>
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://durian-price-prediction.app.ptsgrn.dev/" />
-	<meta property="og:title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
-	<meta
-		property="og:description"
-		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
-	/>
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="http://durian-price-prediction.app.ptsgrn.dev/" />
-	<meta property="twitter:title" content="หน้าหลัก - พยากรณ์ราคาทุเรียนหมอนทอง" />
-	<meta
-		property="twitter:description"
-		content="ทุเรียน หรือที่ใครๆต่างรู้จักกันในชื่อ ราชาแห่งผลไม้ เป็นผลไม้ตาม ฤดูกาลที่ถือว่ามีความสำคัญต่อภาคเกษตรไทย และยังเป็นผลไม้ ส่งออกอันดับ 1 ในกลุ่มผลไม้ไทยที่ส่งออกไปยังตลาดทั่วโลก"
-	/>
-</svelte:head>
-
 <section class="first-section">
 	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year + 543}</Heading>
 	<div class="z-0 my-10">
@@ -101,12 +63,12 @@
 		<SellerMoreCard />
 	</div>
 </section>
-<section class="my-4">
+<!-- <section class="my-4">
 	<HowTo />
 </section>
 <section class="my-4">
 	<About />
-</section>
+</section> -->
 
 <style>
 	.first-section {
