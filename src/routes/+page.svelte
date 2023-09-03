@@ -39,7 +39,7 @@
 </script>
 
 <section class="first-section">
-	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียนปี {year + 543}</Heading>
+	<Heading tag="h1">กราฟพยากรณ์ราคาทุเรียน</Heading>
 	<div class="z-0 my-10">
 		<PerYearGraph />
 	</div>
