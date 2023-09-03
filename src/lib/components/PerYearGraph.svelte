@@ -39,7 +39,16 @@
 				hoverBorderColor: 'white',
 				fill: false,
 				tension: 0,
-				data: rawData.map((d) => d[1]),
+				data: rawData.map((d) => (d[3] === 'p' ? d[1] : null)),
+				yAxisID: 'y',
+				xAxisID: 'x'
+			},
+			{
+				label: 'ราคาจริง',
+				type: 'line',
+				backgroundColor: 'rgb(44, 99, 132)',
+				hoverBorderColor: 'white',
+				data: rawData.map((d) => (d[3] === 'r' ? d[1] : null)),
 				yAxisID: 'y',
 				xAxisID: 'x'
 			}

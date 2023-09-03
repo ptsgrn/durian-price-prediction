@@ -11,15 +11,17 @@
 	interface PriceData {
 		monthYear: string;
 		price: number;
+		type: 't' | 'p'
 	}
 
 	const priceData: PriceData[] = rawData.map((item) => {
 		return {
 			monthYear: formatDateString(new Date(item[2])),
-			price: Number(item[1])
+			price: Number(item[1]),
+			type: item[3]
 		};
 	});
-	const nowDate = new Date('2022-09');
+	const nowDate = new Date();
 	let currentDateString = formatDateString(nowDate);
 	function left0pad(num: number, size: number) {
 		var s = num + '';
@@ -35,6 +37,7 @@
 		new Set(priceData.map((item) => new Date(item.monthYear).getFullYear()))
 	).sort();
 	$: currentPriceIndex = priceData.findIndex((item) => item.monthYear === currentDateString);
+	console.log(priceData)
 </script>
 
 <svelte:head>
@@ -45,7 +48,8 @@
 <div class="grid grid-flow-row border-4 border-blue-700 p-5 mt-5 mb-20">
 	<div>
 		<Heading tag="h2"
-			>พยากรณ์ราคาทุเรียนหมอนทอง เดือน {formatMonth(currentDate)} ปี พ.ศ.&nbsp;{currentYear +
+			>{#if priceData.filter((item) => item.monthYear === `${currentYear}-${currentMonth}`)[0].type === 'p'}
+				พยากรณ์ราคา{:else}ราคาจริงของ{/if}ทุเรียนหมอนทอง เดือน {formatMonth(currentDate)} ปี พ.ศ.&nbsp;{currentYear +
 				543}</Heading
 		>
 		<div class="font-loop">
